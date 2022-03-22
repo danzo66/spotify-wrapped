@@ -17,13 +17,7 @@ or frequency of appearing in the various wrappeds
 def conc():
     """concatenates all the saved arroys into one big array"""
     
-    peeps = ["Beth","Charlie", "Dan", "Dave", "Harvey", "Howard", "Mom", "Robbie", "Ron", "Rory", "Sarah", "Tabby"]
-    squad = ["Beth", "Dan", "Harvey", "Howard", "Robbie", "Ron", "Tabby"]
-    ronbie = ["Ron", "Robbie"]
-    dan = ["Dan 2019", "Dan 2020", "Dan"]
-    house = ["Dan", "Howard", "Tabby"]
-    fam = ["Dan 2020", "Mom"]
-    test = ["Dan", "Rory"]
+    peeps = ['Dan 19', 'Dan 20', 'Dan 21', 'Cosmic Dance', 'Desert Island']
     
     for i, peep in enumerate(peeps):
         arr = np.load(str(peep) + '.npy', allow_pickle=True)
@@ -38,8 +32,6 @@ def conc():
 allwrapped = conc()
 
 
-
-'''internal functions'''
 
 def stats(array, allwrapped, people):
     #frequency
@@ -83,8 +75,8 @@ def stats(array, allwrapped, people):
         #average songs for top artist
         avgpos = [["AVERAGE SONGS"]]
         for i in array[1:]:
-            wee = i[people]
-            avg = sum(wee.values())/len(i[people])
+            w = i[people]
+            avg = sum(w.values())/len(i[people])
             avg = round(avg,2)
             avgpos.append([avg])
         
@@ -97,8 +89,8 @@ def stats(array, allwrapped, people):
             totpeeps = len(allwrapped)
             frequ = float(i[people+1])
             summ = sum(i[people].values())
-            boob = summ*(frequ**2)
-            wavg = boob/(totpeeps)
+            b = summ*(frequ**2)
+            wavg = b/(totpeeps)
             wavg = round(wavg,2)
             wavgpos.append([wavg])
         
@@ -325,8 +317,8 @@ def favartist(allwrapped, indv):
                 else:
                     for j in songart:
                         if song == j[0]:
-                            poo = [j[1],j[0], j[2]]
-                            artistwrapped.append(poo)
+                            p = [j[1],j[0], j[2]]
+                            artistwrapped.append(p)
             
     #deletes dupes
     for i, song in enumerate(artistwrapped):
