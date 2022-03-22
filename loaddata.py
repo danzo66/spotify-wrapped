@@ -6,24 +6,18 @@ import requests
 import math
 
 """
-HARVEY:
-basically put each person's wrapped into a different excel doc, 
-save them all into one folder, the same as these files, 
+put each person's wrapped into a different excel doc, 
+save them all into the same folder as these files, 
 and then put the file names into the variable files 
-(make sure they're in quotes/apostrophes, and separated by commas)
  
 I've copied and pasted this all from spotify so i had only urls instead of names
 so i had to search the web for names
 this takes a LONG TIME, so if you have the actual names of the files in an excel doc
 make sure you have fast set to True to skip all this 
 
-allwrapped = loaddata(files, fast=True)  
-
-sw = 21
-aw = 195
-
 """
 
+#FILES
 dan19 = 'dan19.xlsx'
 dan20 = 'dan20.xlsx'
 dan21 = 'dan21.xlsx'

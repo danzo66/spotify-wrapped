@@ -2,23 +2,19 @@ import numpy as np
 from operator import itemgetter
 
 """
-only thing you might want to change in this is at the bottom:
+peeps is a list of the .npy files to load
 
-squadwrapped1 = sorter(squadwrapped1, ax="position") 
-
-ax takes either "position" or "frequency"
-
-and it just orders the output array based on either the average position 
-or frequency of appearing in the various wrappeds
-
+squadwrapped is based on the songs in common, artistwrapped is based on the artists in common.
+artistfreq is the data on all the artists in common.
 
 """
    
-def conc():
+peeps = ['Dan 2019', 'Dan 2020', 'Dan 2021', 'Cosmic Dance', 'Desert Island']
+
+
+def conc(peeps):
     """concatenates all the saved arroys into one big array"""
-    
-    peeps = ['Dan 19', 'Dan 20', 'Dan 21', 'Cosmic Dance', 'Desert Island']
-    
+        
     for i, peep in enumerate(peeps):
         arr = np.load(str(peep) + '.npy', allow_pickle=True)
         arr = [arr]
@@ -29,7 +25,7 @@ def conc():
 
     return allwrapped
 
-allwrapped = conc()
+allwrapped = conc(peeps)
 
 
 
