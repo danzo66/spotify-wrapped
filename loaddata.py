@@ -6,7 +6,7 @@ import requests
 import math
 
 """
-
+HARVEY:
 basically put each person's wrapped into a different excel doc, 
 save them all into one folder, the same as these files, 
 and then put the file names into the variable files 
@@ -14,7 +14,7 @@ and then put the file names into the variable files
  
 I've copied and pasted this all from spotify so i had only urls instead of names
 so i had to search the web for names
-this takes a LONG FUCKING TIME, so if you have the actual names of the files in an excel doc
+this takes a LONG TIME, so if you have the actual names of the files in an excel doc
 make sure you have fast set to True to skip all this 
 
 allwrapped = loaddata(files, fast=True)  
@@ -24,20 +24,11 @@ aw = 195
 
 """
 
-beth = "beth.xlsx"
-charlie = "charlie.xlsx"
-dan = "danwrapped.xlsx"
-dan20 = "dan2020.xlsx"
-dan19 = "dan2019.xlsx"
-dave = "dave.xlsx" 
-harvey = "harvey.xlsx"
-howard = "howard.xlsx"
-mom = "mom.xlsx"
-robbie = "robbie.xlsx"
-ron = "ron.xlsx"
-rory = "rory.xlsx"
-sarah = "sarah.xlsx"
-tabby = "tabby.xlsx"
+dan19 = 'dan19.xlsx'
+dan20 = 'dan20.xlsx'
+dan21 = 'dan21.xlsx'
+cd = 'cosmicdance.xlsx'
+di = 'desertisland.xlsx'
 
 def loaddata(file, fast):
     wb = load_workbook(filename=file)
@@ -67,7 +58,7 @@ def loaddata(file, fast):
     np.save(str(invwrapped[0]) + ".npy", invwrapped, allow_pickle = True)
     return invwrapped
     
-fist = [beth]
+pl = [dan19,dan20,dan21,cd, di]
 
-for i in fist:
+for i in pl:
     allwrapped = loaddata(i, fast=False)  
