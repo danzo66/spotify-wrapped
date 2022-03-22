@@ -1,0 +1,45 @@
+import numpy as np
+
+discount = 20 #percent
+people = 4
+
+
+d = 1 - discount/100
+
+f = "C:/Users/danip/Downloads/receipt.txt"
+
+file = open(f, 'r')
+
+receipt = []
+
+for line in file:
+    receipt.append(line)
+
+items = np.array([['ITEM', 'PRICE']])
+    
+cc = 0
+
+for i, food in enumerate(receipt):
+    food = food.split('Â£')
+    food = np.array([food])
+    print(food)
+    print(food[0,0][0])
+    
+    if food[0,0][0:6] == 'Choice':
+        #gets add on price
+        addon = receipt[i+1]
+        addon = addon.split('Â£')
+        addon = np.array([addon])
+        addonprice = float(addon[0,1]) * d
+        items[(i - cc),1] = float(items[(i-cc),1]) + float(addonprice)
+        
+        cc += 3
+        
+    elif food[0,0][0:8] == 'Delivery':
+        dpp = float(food[0,1]) / people
+        delivery = np.array([['Delivery per person', dpp]])
+        items = np.concatenate([items, delivery], axis=0)
+        
+    elif food[0,0][0] == '1' or '2' or '3' or '4':
+        food[0,1] = float(food[0,1]) * d
+        items = np.concatenate([items, food], axis=0)
